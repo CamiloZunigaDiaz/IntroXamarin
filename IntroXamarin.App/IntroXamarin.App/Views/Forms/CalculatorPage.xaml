@@ -10,7 +10,7 @@
                     <FormattedString>
                         <FormattedString.Spans>
                             <Span x:Name="spnFirst" Text="12" FontSize="36" TextColor="#fff"/>
-                            <Span x:Name="spnSecond" Text=" x " FontSize="32" TextColor="#d86d6f"/>
+                            <Span x:Name="spnSecond" Text="" FontSize="32" TextColor="#d86d6f"/>
                             <Span x:Name="spnThird" Text="12" FontSize="36" TextColor="#fff"/>
                         </FormattedString.Spans>
                     </FormattedString>
@@ -50,7 +50,7 @@
                 <Button Grid.Row="2" Grid.Column="2" BackgroundColor="White" Text="9" x:Name="Nueve" Clicked="common_clicked"/>
                 <Button Grid.Row="2" Grid.Column="3" BackgroundColor="Coral" Text="*" x:Name="Multi" Clicked="common_clicked"/>
 
-                <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" Text="C" x:Name="Borrar"/>
+                <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" Text="C" x:Name="BorrarTodo" Clicked="common_clicked"/>
                 <Button Grid.Row="3" Grid.Column="1" BackgroundColor="White" Text="0" x:Name="Cero" Clicked="common_clicked" />
                 <Button Grid.Row="3" Grid.Column="2" BackgroundColor="White" Text="." x:Name="Punto" Clicked="common_clicked"/>
                 <Button Grid.Row="3" Grid.Column="3" BackgroundColor="Coral" Text="/" x:Name="Dividir" Clicked="common_clicked"/>
@@ -61,6 +61,11 @@
                     BackgroundColor="Aqua"
                     CornerRadius="20"
                     x:Name="Igual" Clicked="common_clicked"/>
+
+            <Button Text="X" 
+                    BackgroundColor="Red"
+                    CornerRadius="20"
+                    x:Name="BorrarCar" Clicked="common_clicked"/>
 
         </StackLayout>
     </ContentPage.Content>
