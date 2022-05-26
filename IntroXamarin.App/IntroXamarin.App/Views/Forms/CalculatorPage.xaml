@@ -5,6 +5,18 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Label HorizontalOptions="End" Padding="8,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span x:Name="spnFirst" Text="12" FontSize="36" TextColor="#fff"/>
+                            <Span x:Name="spnSecond" Text=" x " FontSize="32" TextColor="#d86d6f"/>
+                            <Span x:Name="spnThird" Text="12" FontSize="36" TextColor="#fff"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
 
             <Entry IsEnabled="False"  x:Name="entNumber"/>
 
@@ -48,7 +60,7 @@
             <Button Text="=" 
                     BackgroundColor="Aqua"
                     CornerRadius="20"
-                    />
+                    x:Name="Igual" Clicked="Igual_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>

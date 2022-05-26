@@ -13,10 +13,29 @@ namespace IntroXamarin.App.Views.Forms
     public partial class CalculatorPage : ContentPage
     {
         public double numUno = 0, numDos= 0, resultado = 0;
-        
+        int operador = 4;
+        bool hayPunto = false, unoDecimal = false, dosDecimal = false;
+        private void Igualar_valores(String operando, int valor)
+        {
+            bool validaLbl = entNumber.Text.GetType() != operador.GetType();
+            bool validaSpn = spnFirst.Text.GetType() != operador.GetType();
+            if (resultado != 0 || ((validaLbl || validaSpn) || (validaLbl && validaSpn)))
+                unoDecimal = true;
+            if (unoDecimal)
+                numUno = double.Parse(entNumber.Text);
+            else
+                numUno = int.Parse(entNumber.Text);
+            spnFirst.Text = numUno + " ";
+            entNumber.Text = "0";
+            spnSecond.Text = operando;
+            operador = valor;
+            hayPunto = false;
+        }
 
-        
-
+        private bool Hallar_Lleno()
+        {            
+            return spnFirst.Text == "" && spnSecond.Text == "";
+        }
         private void Ingresar_Numero (String numero)
         {
             if(entNumber.Text == "0" && numero != ".")
@@ -34,7 +53,9 @@ namespace IntroXamarin.App.Views.Forms
         }
         private void Sumar_Clicked(object sender, EventArgs e)
         {
-            Ingresar_Numero("+");
+            Igualar_valores("+", 0);
+            if (!Hallar_Lleno())
+                spnThird.Text = "";
         }
 
         private void Multi_Clicked(object sender, EventArgs e)
@@ -91,6 +112,41 @@ namespace IntroXamarin.App.Views.Forms
         private void Ocho_Clicked(object sender, EventArgs e)
         {
             Ingresar_Numero("8");
+        }
+
+        private void Igual_Clicked(object sender, EventArgs e)
+        {
+            if (spnFirst.Text != "" && spnSecond.Text != "")
+            {
+                spnThird.Text = " " + entNumber.Text;
+                if (dosDecimal)
+                    numDos = double.Parse(spnThird.Text);
+                else
+                    numDos = int.Parse(spnThird.Text);
+                if (operador == 0)
+                {
+                    resultado = numUno + numDos;
+                    entNumber.Text = resultado + "";
+                }
+                else if (operador == 1)
+                {
+                    resultado = numUno - numDos;
+                    entNumber.Text = resultado + "";
+                }
+                else if (operador == 2)
+                {
+                    resultado = numUno * numDos;
+                    entNumber.Text = resultado + "";
+                }
+                else
+                {
+                    if (numDos == 0) { numDos = 1; }
+                    resultado = numUno / numDos;
+                    entNumber.Text = resultado + "";
+                }
+                numUno = 0; numDos = 0; resultado = 0;
+                operador = 4; unoDecimal = false; dosDecimal = false;
+            }
         }
 
         private void Nueve_Clicked(object sender, EventArgs e)
