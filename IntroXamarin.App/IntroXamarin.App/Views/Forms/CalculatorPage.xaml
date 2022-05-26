@@ -1,0 +1,55 @@
+﻿ 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IntroXamarin.App.Views.Forms.CalculatorPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Entry IsEnabled="False"  x:Name="entNumber"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" BackgroundColor="White" Text="1" x:Name="Uno"  Clicked="Uno_Clicked"/>
+                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="White" Text="2" x:Name="Dos"  Clicked="Dos_Clicked"/>
+                <Button Grid.Row="0" Grid.Column="2" BackgroundColor="White" Text="3" x:Name="Tres" Clicked="Tres_Clicked"/>
+                <Button Grid.Row="0" Grid.Column="3" BackgroundColor="Coral" Text="+" x:Name="Sumar" Clicked="Sumar_Clicked"/>
+
+                <Button Grid.Row="1" Grid.Column="0" BackgroundColor="White" Text="4" x:Name="Cuatro" Clicked="Cuatro_Clicked"/>
+                <Button Grid.Row="1" Grid.Column="1" BackgroundColor="White" Text="5" x:Name="Cinco" Clicked="Cinco_Clicked"/>
+                <Button Grid.Row="1" Grid.Column="2" BackgroundColor="White" Text="6" x:Name="Seis" Clicked="Seis_Clicked"/>
+                <Button Grid.Row="1" Grid.Column="3" BackgroundColor="Coral" Text="-" x:Name="Restar" Clicked="Restar_Clicked"/>
+
+                <Button Grid.Row="2" Grid.Column="0" BackgroundColor="White" Text="7" x:Name="Siete" Clicked="Siete_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="1" BackgroundColor="White" Text="8" x:Name="Ocho" Clicked="Ocho_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="2" BackgroundColor="White" Text="9" x:Name="Nueve" Clicked="Nueve_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="3" BackgroundColor="Coral" Text="*" x:Name="Multi" Clicked="Multi_Clicked"/>
+
+                <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" Text="C" x:Name="Borrar" Clicked="Borrar_Clicked"/>
+                <Button Grid.Row="3" Grid.Column="1" BackgroundColor="White" Text="0" x:Name="Cero" Clicked="Cero_Clicked" />
+                <Button Grid.Row="3" Grid.Column="2" BackgroundColor="White" Text="." x:Name="Punto" Clicked="Punto_Clicked"/>
+                <Button Grid.Row="3" Grid.Column="3" BackgroundColor="Coral" Text="/" x:Name="Dividir" Clicked="Dividir_Clicked"/>
+
+            </Grid>
+
+            <Button Text="=" 
+                    BackgroundColor="Aqua"
+                    CornerRadius="20"
+                    />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
