@@ -19,10 +19,10 @@ namespace IntroXamarin.App.Views.Forms
         public CalculatorPage()
         {
             InitializeComponent();
-            escribir(""); // Evita que el texto sea 'null' al iniciar la aplicación.
+            Escribir(""); // Evita que el texto sea 'null' al iniciar la aplicación.
         }
 
-        private void escribir(String texto)
+        private void Escribir(String texto)
         {
             if (texto == ".")
             {
@@ -34,18 +34,18 @@ namespace IntroXamarin.App.Views.Forms
             }
             else if (entNumber.Text == "0")
             {
-                limpiar();
+                Limpiar();
             }
             entNumber.Text += texto;
         }
 
-        public void limpiar()
+        public void Limpiar()
         {
             entNumber.Text = "";
             tienePunto = false;
         }
 
-        public void common_clicked(object sender, EventArgs evt)
+        public void Common_clicked(object sender, EventArgs evt)
         {
             String numero = entNumber.Text;
             String texto = ((Button)sender).Text;
@@ -55,57 +55,57 @@ namespace IntroXamarin.App.Views.Forms
                 if (numero == "" || numero.EndsWith(".")) return;
                 operador = texto;
                 numUno = Convert.ToDouble(numero);
-                limpiar();
+                Limpiar();
             }
             else if (texto == "=")
             {
                 if (numero == "" || numero.EndsWith(".")) return;
                 numDos = Convert.ToDouble(numero);
-                limpiar();
-                calcular(operador);
+                Limpiar();
+                Calcular(operador);
             }
             else if (texto == "C")
             {
-                limpiar();
+                Limpiar();
             }
             else if (texto == "X")
             {
                 if (numero == "") return;
                 string nuevo = entNumber.Text.Remove(entNumber.Text.Length - 1);
-                limpiar();
-                escribir(nuevo);
+                Limpiar();
+                Escribir(nuevo);
             }
             else
             {
-                escribir(((Button)sender).Text);
+                Escribir(((Button)sender).Text);
             }
         }
 
-        public void calcular(string operador)
+        public void Calcular(string operador)
         {
             switch (operador)
             {
                 case "+":
-                    escribir(Convert.ToString(numUno + numDos));
+                    Escribir(Convert.ToString(numUno + numDos));
                     break;
                 case "-":
-                    escribir(Convert.ToString(numUno - numDos));
+                    Escribir(Convert.ToString(numUno - numDos));
                     break;
                 case "*":
-                    escribir(Convert.ToString(numUno * numDos));
+                    Escribir(Convert.ToString(numUno * numDos));
                     break;
                 case "/":
                     if (numDos == 0)
                     {
-                        escribir("¡Error, division entre 0!");
+                        Escribir("¡Error, division entre 0!");
                     }
                     else
                     {
-                        escribir(Convert.ToString(numUno / numDos));
+                        Escribir(Convert.ToString(numUno / numDos));
                     }
                     break;
                 default:
-                    escribir("¡Operacion desconocida!");
+                    Escribir("¡Operacion desconocida!");
                     break;
             }
         }

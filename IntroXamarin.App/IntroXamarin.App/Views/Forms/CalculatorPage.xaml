@@ -35,37 +35,37 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" BackgroundColor="White" Text="1" x:Name="Uno"  Clicked="common_clicked"/>
-                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="White" Text="2" x:Name="Dos"  Clicked="common_clicked"/>
-                <Button Grid.Row="0" Grid.Column="2" BackgroundColor="White" Text="3" x:Name="Tres" Clicked="common_clicked"/>
-                <Button Grid.Row="0" Grid.Column="3" BackgroundColor="Coral" Text="+" x:Name="Sumar" Clicked="common_clicked"/>
+                <Button Grid.Row="0" Grid.Column="0" BackgroundColor="White" Text="1" x:Name="Uno"  Clicked="Common_clicked"/>
+                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="White" Text="2" x:Name="Dos"  Clicked="Common_clicked"/>
+                <Button Grid.Row="0" Grid.Column="2" BackgroundColor="White" Text="3" x:Name="Tres" Clicked="Common_clicked"/>
+                <Button Grid.Row="0" Grid.Column="3" BackgroundColor="Coral" Text="+" x:Name="Sumar" Clicked="Common_clicked"/>
 
-                <Button Grid.Row="1" Grid.Column="0" BackgroundColor="White" Text="4" x:Name="Cuatro" Clicked="common_clicked"/>
-                <Button Grid.Row="1" Grid.Column="1" BackgroundColor="White" Text="5" x:Name="Cinco" Clicked="common_clicked"/>
-                <Button Grid.Row="1" Grid.Column="2" BackgroundColor="White" Text="6" x:Name="Seis" Clicked="common_clicked"/>
-                <Button Grid.Row="1" Grid.Column="3" BackgroundColor="Coral" Text="-" x:Name="Restar" Clicked="common_clicked"/>
+                <Button Grid.Row="1" Grid.Column="0" BackgroundColor="White" Text="4" x:Name="Cuatro" Clicked="Common_clicked"/>
+                <Button Grid.Row="1" Grid.Column="1" BackgroundColor="White" Text="5" x:Name="Cinco" Clicked="Common_clicked"/>
+                <Button Grid.Row="1" Grid.Column="2" BackgroundColor="White" Text="6" x:Name="Seis" Clicked="Common_clicked"/>
+                <Button Grid.Row="1" Grid.Column="3" BackgroundColor="Coral" Text="-" x:Name="Restar" Clicked="Common_clicked"/>
 
-                <Button Grid.Row="2" Grid.Column="0" BackgroundColor="White" Text="7" x:Name="Siete" Clicked="common_clicked"/>
-                <Button Grid.Row="2" Grid.Column="1" BackgroundColor="White" Text="8" x:Name="Ocho" Clicked="common_clicked"/>
-                <Button Grid.Row="2" Grid.Column="2" BackgroundColor="White" Text="9" x:Name="Nueve" Clicked="common_clicked"/>
-                <Button Grid.Row="2" Grid.Column="3" BackgroundColor="Coral" Text="*" x:Name="Multi" Clicked="common_clicked"/>
+                <Button Grid.Row="2" Grid.Column="0" BackgroundColor="White" Text="7" x:Name="Siete" Clicked="Common_clicked"/>
+                <Button Grid.Row="2" Grid.Column="1" BackgroundColor="White" Text="8" x:Name="Ocho" Clicked="Common_clicked"/>
+                <Button Grid.Row="2" Grid.Column="2" BackgroundColor="White" Text="9" x:Name="Nueve" Clicked="Common_clicked"/>
+                <Button Grid.Row="2" Grid.Column="3" BackgroundColor="Coral" Text="*" x:Name="Multi" Clicked="Common_clicked"/>
 
-                <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" Text="C" x:Name="BorrarTodo" Clicked="common_clicked"/>
-                <Button Grid.Row="3" Grid.Column="1" BackgroundColor="White" Text="0" x:Name="Cero" Clicked="common_clicked" />
-                <Button Grid.Row="3" Grid.Column="2" BackgroundColor="White" Text="." x:Name="Punto" Clicked="common_clicked"/>
-                <Button Grid.Row="3" Grid.Column="3" BackgroundColor="Coral" Text="/" x:Name="Dividir" Clicked="common_clicked"/>
+                <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" Text="C" x:Name="BorrarTodo" Clicked="Common_clicked"/>
+                <Button Grid.Row="3" Grid.Column="1" BackgroundColor="White" Text="0" x:Name="Cero" Clicked="Common_clicked" />
+                <Button Grid.Row="3" Grid.Column="2" BackgroundColor="White" Text="." x:Name="Punto" Clicked="Common_clicked"/>
+                <Button Grid.Row="3" Grid.Column="3" BackgroundColor="Coral" Text="/" x:Name="Dividir" Clicked="Common_clicked"/>
 
             </Grid>
 
             <Button Text="=" 
                     BackgroundColor="Aqua"
                     CornerRadius="20"
-                    x:Name="Igual" Clicked="common_clicked"/>
+                    x:Name="Igual" Clicked="Common_clicked"/>
 
             <Button Text="X" 
                     BackgroundColor="Red"
                     CornerRadius="20"
-                    x:Name="BorrarCar" Clicked="common_clicked"/>
+                    x:Name="BorrarCar" Clicked="Common_clicked"/>
 
         </StackLayout>
     </ContentPage.Content>
