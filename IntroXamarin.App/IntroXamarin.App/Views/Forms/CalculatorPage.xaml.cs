@@ -12,55 +12,63 @@ namespace IntroXamarin.App.Views.Forms
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CalculatorPage : ContentPage
     {
-        public double numUno = 0, numDos = 0;
+        double numUno = 0, numDos = 0, resultado = 0;
+        bool tienePunto = false;
         string operador = "";
-
-        private void escribir(String numero)
-        {
-            if (entNumber.Text == "0" && numero != ".")
-            {
-                entNumber.Text = numero;
-            }
-            else
-            {
-                entNumber.Text += numero;
-            }
-        }
 
         public CalculatorPage()
         {
             InitializeComponent();
+            escribir(""); // Evita que el texto sea 'null' al iniciar la aplicación.
+        }
+
+        private void escribir(String texto)
+        {
+            if (texto == ".")
+            {
+                if (!tienePunto && entNumber.Text == "0")
+                {
+                    tienePunto = true;
+                }
+                else return;
+            }
+            else if (entNumber.Text == "0")
+            {
+                limpiar();
+            }
+            entNumber.Text += texto;
         }
 
         public void limpiar()
         {
             entNumber.Text = "";
+            tienePunto = false;
         }
+
         public void common_clicked(object sender, EventArgs evt)
         {
             String numero = entNumber.Text;
-            escribir("");
-            String entrada = ((Button)sender).Text;
+            String texto = ((Button)sender).Text;
 
-            if (entrada == "+" || entrada == "-" || entrada == "*" || entrada == "/")
+            if (texto == "+" || texto == "-" || texto == "*" || texto == "/")
             {
-                if (numero == "") return;
-                operador = entrada;
-                numUno = Convert.ToInt32(numero);
+                if (numero == "" || numero.EndsWith(".")) return;
+                operador = texto;
+                numUno = Convert.ToDouble(numero);
                 limpiar();
             }
-            else if (entrada == "=")
+            else if (texto == "=")
             {
-                if (numero == "") return;
-                numDos = Convert.ToInt32(numero);
+                if (numero == "" || numero.EndsWith(".")) return;
+                numDos = Convert.ToDouble(numero);
                 limpiar();
                 calcular(operador);
             }
-            else if (entrada == "C")
+            else if (texto == "C")
             {
                 limpiar();
             }
-            else if (entrada == "X")
+            else if (texto == "X")
             {
                 if (numero == "") return;
                 string nuevo = entNumber.Text.Remove(entNumber.Text.Length - 1);
@@ -96,12 +104,10 @@ namespace IntroXamarin.App.Views.Forms
                         escribir(Convert.ToString(numUno / numDos));
                     }
                     break;
-
                 default:
                     escribir("¡Operacion desconocida!");
                     break;
             }
         }
-
     }
 }
