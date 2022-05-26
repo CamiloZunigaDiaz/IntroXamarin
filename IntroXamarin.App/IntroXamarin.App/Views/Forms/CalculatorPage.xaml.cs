@@ -12,7 +12,7 @@ namespace IntroXamarin.App.Views.Forms
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CalculatorPage : ContentPage
     {
-        double numUno = 0, numDos = 0, resultado = 0;
+        double numUno = 0, numDos = 0;
         bool tienePunto = false;
         string operador = "";
 
