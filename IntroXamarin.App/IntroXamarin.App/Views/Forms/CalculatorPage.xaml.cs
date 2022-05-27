@@ -68,7 +68,7 @@ namespace IntroXamarin.App.Views.Forms
             {
                 Limpiar();
             }
-            else if (texto == "X")
+            else if (texto == "AC")
             {
                 if (numero == "") return;
                 string nuevo = entNumber.Text.Remove(entNumber.Text.Length - 1);

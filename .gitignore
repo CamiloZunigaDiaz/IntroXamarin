@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/IntroXamarin.App/IntroXamarin.App/Views/Forms/IMCPage.xaml
+/IntroXamarin.App/IntroXamarin.App/Views/Forms/IMCPage.xaml.cs
